@@ -1,8 +1,12 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useLang } from "../i18n.jsx";
 import { categories, projects, ui } from "../data.js";
 import Section from "./Section.jsx";
 import { ArrowIcon, GitHubIcon } from "./Icons.jsx";
+import TechTag from "./TechTag.jsx";
+
+// Évènement envoyé par les bulles de projets (section Compétences).
+export const FOCUS_PROJECT = "focus-project";
 
 const asset = (path) => `${import.meta.env.BASE_URL}${path}`;
 
@@ -29,13 +33,16 @@ function Lightbox({ src, alt, onClose }) {
   );
 }
 
-function ProjectCard({ project, onZoom }) {
+function ProjectCard({ project, onZoom, highlighted }) {
   const { t } = useLang();
   const title = t(project.title);
   const hasMedia = Boolean(project.image);
 
   return (
-    <article className={`project spotlight${hasMedia ? " has-media" : ""}`}>
+    <article
+      id={`projet-${project.id}`}
+      className={`project spotlight${hasMedia ? " has-media" : ""}${highlighted ? " is-highlighted" : ""}`}
+    >
       {hasMedia && (
         <button className="project-media" onClick={() => onZoom(asset(project.image), title)} aria-label={title}>
           <img src={asset(project.image)} alt={title} loading="lazy" />
@@ -58,7 +65,7 @@ function ProjectCard({ project, onZoom }) {
 
         <ul className="tags">
           {project.tags.map((tag, i) => (
-            <li key={i}>{t(tag)}</li>
+            <TechTag key={i} name={tag} />
           ))}
         </ul>
 
@@ -91,7 +98,37 @@ export default function Projects() {
   const [filter, setFilter] = useState("all");
   const [zoom, setZoom] = useState(null);
 
+  const [focused, setFocused] = useState(null);
+  const pendingScroll = useRef(null);
+
   const onZoom = useCallback((src, alt) => setZoom({ src, alt }), []);
+
+  // Une bulle de projet a été cliquée : on retire le filtre si besoin, puis on
+  // fait défiler jusqu'à la carte et on la met en évidence un instant.
+  useEffect(() => {
+    const onFocus = (e) => {
+      const id = e.detail;
+      const project = projects.find((p) => p.id === id);
+      if (!project) return;
+      setFilter((f) => (f === "all" || f === project.category ? f : "all"));
+      pendingScroll.current = id;
+      setFocused({ id, at: Date.now() });
+    };
+    window.addEventListener(FOCUS_PROJECT, onFocus);
+    return () => window.removeEventListener(FOCUS_PROJECT, onFocus);
+  }, []);
+
+  useEffect(() => {
+    if (!focused) return;
+    const id = pendingScroll.current;
+    pendingScroll.current = null;
+    if (id) {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      document.getElementById(`projet-${id}`)?.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "center" });
+    }
+    const timer = setTimeout(() => setFocused(null), 1800);
+    return () => clearTimeout(timer);
+  }, [focused]);
   const onClose = useCallback(() => setZoom(null), []);
 
   const visible = filter === "all" ? projects : projects.filter((p) => p.category === filter);
@@ -117,7 +154,7 @@ export default function Projects() {
 
       <div className="projects">
         {visible.map((p) => (
-          <ProjectCard key={p.id} project={p} onZoom={onZoom} />
+          <ProjectCard key={p.id} project={p} onZoom={onZoom} highlighted={focused?.id === p.id} />
         ))}
       </div>
 

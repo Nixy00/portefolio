@@ -106,7 +106,7 @@ export const projects = [
         en: "Pair work, code tracked on GitLab",
       },
     ],
-    tags: ["SQL", "PHP", "JavaScript", "HTML/CSS", "GitLab"],
+    tags: ["SQL", "PHP", "JavaScript", "HTML", "CSS", "GitLab"],
   },
   {
     id: "jo-2024",
@@ -232,11 +232,11 @@ export const stack = [
   },
   {
     title: { fr: "Développement", en: "Development" },
-    items: ["Python", "PHP / Symfony", "JavaScript", "HTML / CSS", "Streamlit"],
+    items: ["Python", "PHP", "Symfony", "JavaScript", "HTML", "CSS", "Streamlit"],
   },
   {
     title: { fr: "Outils", en: "Tools" },
-    items: ["Git", "GitHub / GitLab", "Docker", "Linux (Ubuntu)", "pytest"],
+    items: ["Git", "GitHub", "GitLab", "Docker", "Linux (Ubuntu)", "pytest"],
   },
 ];
 

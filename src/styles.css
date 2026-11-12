@@ -505,11 +505,25 @@ main,
 .tags li {
   font-family: var(--mono);
   font-size: 0.75rem;
-  padding: 4px 10px;
   border-radius: 6px;
   background: var(--surface-2);
   border: 1px solid var(--line);
+  transition: border-color 0.2s ease, transform 0.2s ease;
 }
+.tags li > span,
+.tags li > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  color: var(--text);
+}
+.tags li:has(> a):hover { border-color: var(--accent); transform: translateY(-1px); }
+.tags li > a:hover { color: var(--accent); text-decoration: none; }
+.tech-icon { flex: none; }
+/* logos trop sombres sur fond sombre (ou trop clairs sur fond clair) : couleur du texte */
+:root[data-theme="dark"] .tech-icon[data-tone="dark"],
+:root[data-theme="light"] .tech-icon[data-tone="light"] { color: var(--text) !important; }
 
 .gallery {
   display: grid;
@@ -619,12 +633,24 @@ main,
   flex-wrap: wrap;
   gap: 6px;
 }
-.but-projects li {
+.but-projects a {
+  display: inline-block;
   font-size: 0.75rem;
   padding: 3px 9px;
   border-radius: 999px;
   background: var(--accent-soft);
+  border: 1px solid transparent;
   color: var(--text);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.but-projects a::after { content: " ↓"; opacity: 0.6; }
+.but-projects a:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* carte mise en évidence après un clic sur une bulle de projet */
+.project.is-highlighted { animation: highlight 1.8s ease; }
+@keyframes highlight {
+  0%, 60% { border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-soft), var(--shadow); }
+  100% { border-color: var(--line); box-shadow: var(--shadow); }
 }
 
 .stack-grid {

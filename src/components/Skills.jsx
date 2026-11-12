@@ -1,6 +1,14 @@
 import { useLang } from "../i18n.jsx";
 import { butSkills, languages, projects, stack, ui } from "../data.js";
 import Section from "./Section.jsx";
+import TechTag from "./TechTag.jsx";
+import { FOCUS_PROJECT } from "./Projects.jsx";
+
+function focusProject(e, id) {
+  e.preventDefault();
+  history.replaceState(null, "", `#projet-${id}`);
+  window.dispatchEvent(new CustomEvent(FOCUS_PROJECT, { detail: id }));
+}
 
 const projectTitle = (id, t) => {
   const p = projects.find((x) => x.id === id);
@@ -23,7 +31,11 @@ export default function Skills() {
             <p>{t(s.text)}</p>
             <ul className="but-projects">
               {s.projects.map((id) => (
-                <li key={id}>{projectTitle(id, t)}</li>
+                <li key={id}>
+                  <a href={`#projet-${id}`} onClick={(e) => focusProject(e, id)}>
+                    {projectTitle(id, t)}
+                  </a>
+                </li>
               ))}
             </ul>
           </article>
@@ -36,7 +48,7 @@ export default function Skills() {
             <h3>{t(g.title)}</h3>
             <ul className="tags">
               {g.items.map((it) => (
-                <li key={it}>{it}</li>
+                <TechTag key={it} name={it} />
               ))}
             </ul>
           </div>
