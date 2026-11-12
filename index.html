@@ -6,6 +6,17 @@
     <title>Matteo Godart · Portfolio</title>
     <meta name="description" content="Portfolio de Matteo Godart, étudiant en BUT Informatique, parcours Data." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230c2a30'/><text x='50%' y='56%' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-weight='700' font-size='28' fill='%23f2c57c'>MG</text></svg>" />
+    <script>
+      // Applique le thème et la langue avant l'affichage, pour éviter un flash.
+      (function () {
+        var d = document.documentElement, th, lg;
+        try { th = localStorage.getItem("portfolio-theme"); lg = localStorage.getItem("portfolio-lang"); } catch (e) {}
+        if (th !== "dark" && th !== "light") th = window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+        if (lg !== "fr" && lg !== "en") lg = (navigator.language || "fr").toLowerCase().indexOf("fr") === 0 ? "fr" : "en";
+        d.dataset.theme = th;
+        d.lang = lg;
+      })();
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
