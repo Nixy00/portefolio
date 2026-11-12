@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matteo Godart — Portfolio</title>
+  <meta name="description" content="Portfolio de Matteo Godart, étudiant en BUT Informatique, parcours Data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a href="#top" class="brand">MG<span>.</span></a>
+  <nav>
+    <a href="#projets"><span class="fr">Projets</span><span class="en">Projects</span></a>
+    <a href="#competences"><span class="fr">Compétences</span><span class="en">Skills</span></a>
+    <a href="#parcours"><span class="fr">Parcours</span><span class="en">Background</span></a>
+  </nav>
+  <button class="lang-toggle" id="langToggle" aria-label="Changer de langue / Switch language">
+    <span class="fr">EN</span><span class="en">FR</span>
+  </button>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">
+      <span class="fr">Étudiant en BUT Informatique · Parcours Data</span>
+      <span class="en">Computer Science BUT student · Data track</span>
+    </p>
+    <h1>Matteo Godart</h1>
+    <p class="lead">
+      <span class="fr">Je conçois des bases de données, des tableaux de bord et des applications web. J'aime transformer des données brutes en outils lisibles et utiles.</span>
+      <span class="en">I design databases, dashboards and web applications. I enjoy turning raw data into tools that are clear and useful.</span>
+    </p>
+    <div class="hero-meta">
+      <span><span class="fr">Reims, France</span><span class="en">Reims, France</span></span>
+      <span><span class="fr">IUT de Reims-Châlons-Charleville</span><span class="en">IUT de Reims-Châlons-Charleville</span></span>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section id="projets" class="section">
+    <h2><span class="fr">Projets</span><span class="en">Projects</span></h2>
+
+    <!-- AutoDash -->
+    <article class="project featured">
+      <div class="project-media">
+        <img src="assets/autodash.png" alt="Aperçu du tableau de bord AutoDash" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-kind"><span class="fr">Projet personnel</span><span class="en">Personal project</span></p>
+        <h3>AutoDash</h3>
+        <p>
+          <span class="fr">Tableau de bord des statistiques du sport automobile, par saison et par course, avec simulation des dernières manches d'un championnat encore ouvert. Données issues de l'API Jolpica-F1.</span>
+          <span class="en">A statistics dashboard for motorsport, by season and by race, with simulation of the final rounds of a still-open championship. Data from the Jolpica-F1 API.</span>
+        </p>
+        <ul class="tags">
+          <li>Python</li><li>Streamlit</li><li>Plotly</li><li>pandas</li><li>pytest</li><li>Docker</li><li>GitHub Actions</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Nixy00/AutoDash" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- buddy-system -->
+    <article class="project featured">
+      <div class="project-media">
+        <img src="assets/buddy-home.png" alt="Page d'accueil de Buddy System" loading="lazy">
+      </div>
+      <div class="project-body">
+        <p class="project-kind"><span class="fr">SAÉ · projet d'équipe (5 étudiants)</span><span class="en">SAÉ · team project (5 students)</span></p>
+        <h3>Buddy System</h3>
+        <p>
+          <span class="fr">Application web qui facilite l'intégration des étudiants internationaux à l'URCA : parrainage, événements, messagerie privée et tableau de bord administrateur.</span>
+          <span class="en">A web app that helps international students settle in at URCA: buddy matching, events, private messaging and an admin dashboard.</span>
+        </p>
+        <ul class="tags">
+          <li>Symfony 7.3</li><li>PHP</li><li>Twig</li><li>MySQL</li><li>Codeception</li><li>Git</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Nixy00/buddy-system" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+        <div class="shots">
+          <img src="assets/buddy-admin.png" alt="Tableau de bord administrateur de Buddy System" loading="lazy">
+          <img src="assets/buddy-messagerie.png" alt="Messagerie de Buddy System" loading="lazy">
+        </div>
+      </div>
+    </article>
+
+    <!-- Cours : Steam -->
+    <article class="project">
+      <div class="project-body">
+        <p class="project-kind"><span class="fr">Projet de cours · en équipe de 2</span><span class="en">Course project · team of 2</span></p>
+        <h3><span class="fr">Application web sur une base Steam</span><span class="en">Web application on a Steam database</span></h3>
+        <p>
+          <span class="fr">Manipulation d'une base de données de jeux Steam, puis développement d'une application web front-end et back-end, avec un suivi d'équipe sous GitLab.</span>
+          <span class="en">Manipulating a Steam games database, then building a front-end and back-end web application, with team tracking on GitLab.</span>
+        </p>
+        <ul class="tags"><li>SQL</li><li>PHP</li><li>HTML/CSS</li><li>JavaScript</li><li>GitLab</li></ul>
+      </div>
+    </article>
+
+    <!-- Cours : JO Paris 2024 -->
+    <article class="project">
+      <div class="project-body">
+        <p class="project-kind"><span class="fr">Projet de cours</span><span class="en">Course project</span></p>
+        <h3><span class="fr">Base de données des JO Paris 2024</span><span class="en">Paris 2024 Olympics database</span></h3>
+        <p>
+          <span class="fr">Conception et alimentation d'une base sur les Jeux olympiques, insertion des données par plusieurs méthodes, puis visualisation via des graphiques.</span>
+          <span class="en">Design and population of an Olympics database, data loaded through several methods, then visualised with charts.</span>
+        </p>
+        <ul class="tags"><li>SQL</li><li>SQL Developer</li><li>PowerAMC</li><li>Power BI</li><li>Access</li></ul>
+      </div>
+    </article>
+
+    <!-- Stage -->
+    <article class="project">
+      <div class="project-body">
+        <p class="project-kind"><span class="fr">Stage · 8 semaines</span><span class="en">Internship · 8 weeks</span></p>
+        <h3><span class="fr">Valorisation des données de production</span><span class="en">Production data valorisation</span></h3>
+        <p>
+          <span class="fr">Cartographie et analyse des flux de collecte et de traitement des données, identification des pertes d'information, et mise en œuvre d'outils internes et d'un tableau de bord opérationnel.</span>
+          <span class="en">Mapping and analysis of data collection and processing flows, identifying information loss, and implementing internal tools and an operational dashboard.</span>
+        </p>
+        <ul class="tags"><li>Data</li><li>Power BI</li><li>Process analysis</li></ul>
+      </div>
+    </article>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section id="competences" class="section">
+    <h2><span class="fr">Compétences</span><span class="en">Skills</span></h2>
+    <div class="skills">
+      <div class="skill-group">
+        <h3><span class="fr">Données</span><span class="en">Data</span></h3>
+        <ul>
+          <li>SQL</li><li>Conception de bases de données</li><li>Power BI</li><li>Microsoft Access</li><li>PowerAMC</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3><span class="fr">Développement</span><span class="en">Development</span></h3>
+        <ul>
+          <li>Python</li><li>PHP / Symfony</li><li>JavaScript</li><li>HTML / CSS</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3><span class="fr">Outils</span><span class="en">Tools</span></h3>
+        <ul>
+          <li>Git / GitLab / GitHub</li><li>Docker</li><li>Linux (Ubuntu)</li><li>Microsoft Office</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3><span class="fr">Langues</span><span class="en">Languages</span></h3>
+        <ul>
+          <li><span class="fr">Français : langue maternelle</span><span class="en">French: native</span></li>
+          <li><span class="fr">Anglais : conversationnel</span><span class="en">English: conversational</span></li>
+          <li><span class="fr">Espagnol : intermédiaire</span><span class="en">Spanish: intermediate</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS -->
+  <section id="parcours" class="section">
+    <h2><span class="fr">Parcours</span><span class="en">Background</span></h2>
+    <ol class="timeline">
+      <li>
+        <span class="when">2026</span>
+        <div>
+          <strong><span class="fr">BUT Informatique, 3e année · option Data</span><span class="en">BUT Computer Science, 3rd year · Data track</span></strong>
+          <p>IUT de Reims-Châlons-Charleville</p>
+        </div>
+      </li>
+      <li>
+        <span class="when">2025</span>
+        <div>
+          <strong><span class="fr">BUT Informatique, 2e année · option Data</span><span class="en">BUT Computer Science, 2nd year · Data track</span></strong>
+          <p>IUT de Reims-Châlons-Charleville</p>
+        </div>
+      </li>
+      <li>
+        <span class="when">2024</span>
+        <div>
+          <strong><span class="fr">Baccalauréat STI2D</span><span class="en">STI2D Baccalaureate</span></strong>
+          <p><span class="fr">Mention « assez bien »</span><span class="en">Mention "assez bien" (fairly good)</span></p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+</main>
+
+<footer>
+  <p>© Matteo Godart</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
