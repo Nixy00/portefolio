@@ -14,7 +14,7 @@ export default function Skills() {
     <Section id="competences" index="02" title={t(ui.skillsTitle)} intro={t(ui.skillsIntro)}>
       <div className="but-grid">
         {butSkills.map((s, i) => (
-          <article key={s.id} className={`but-card${s.core ? " is-core" : ""}`}>
+          <article key={s.id} className={`but-card spotlight${s.core ? " is-core" : ""}`}>
             <div className="but-top">
               <span className="but-num">C{i + 1}</span>
               {s.core && <span className="badge">{t(ui.coreBadge)}</span>}

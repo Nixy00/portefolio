@@ -35,7 +35,7 @@ function ProjectCard({ project, onZoom }) {
   const hasMedia = Boolean(project.image);
 
   return (
-    <article className={`project${hasMedia ? " has-media" : ""}`}>
+    <article className={`project spotlight${hasMedia ? " has-media" : ""}`}>
       {hasMedia && (
         <button className="project-media" onClick={() => onZoom(asset(project.image), title)} aria-label={title}>
           <img src={asset(project.image)} alt={title} loading="lazy" />

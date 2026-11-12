@@ -8,8 +8,13 @@ export const profile = {
     en: "Computer Science student (BUT) · Data track",
   },
   intro: {
-    fr: "Je conçois des bases de données, des tableaux de bord et des applications web. J'aime transformer des données brutes en outils clairs et utiles.",
-    en: "I design databases, dashboards and web applications. I enjoy turning raw data into tools that are clear and useful.",
+    fr: "Étudiant en 3e année, j'aime transformer des données brutes en outils clairs et utiles, de la modélisation jusqu'à la visualisation.",
+    en: "Third-year student who enjoys turning raw data into clear, useful tools, from modelling all the way to visualisation.",
+  },
+  headline: { fr: "Je conçois des", en: "I build" },
+  headlineWords: {
+    fr: ["bases de données", "tableaux de bord", "applications web", "outils d'analyse"],
+    en: ["databases", "dashboards", "web applications", "analysis tools"],
   },
   location: { fr: "Reims, France", en: "Reims, France" },
   school: "IUT de Reims-Châlons-Charleville",
@@ -297,4 +302,7 @@ export const ui = {
   langLabel: { fr: "Switch to English", en: "Passer en français" },
   footer: { fr: "Portfolio de Matteo Godart", en: "Matteo Godart's portfolio" },
   backToTop: { fr: "Haut de page", en: "Back to top" },
+  menuOpen: { fr: "Ouvrir le menu", en: "Open menu" },
+  menuClose: { fr: "Fermer le menu", en: "Close menu" },
+  scrollHint: { fr: "Défiler", en: "Scroll" },
 };
