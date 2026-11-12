@@ -2,11 +2,13 @@
 // Pour ajouter une techno : une entrée ici, puis utiliser son nom dans data.js.
 // Les logos absents de Simple Icons (Power BI, Access, Twig...) n'ont que le lien.
 import {
+  siClaude,
   siCss,
   siDocker,
   siGit,
   siGithub,
   siGithubactions,
+  siGithubpages,
   siGitlab,
   siHtml5,
   siJavascript,
@@ -16,9 +18,11 @@ import {
   siPlotly,
   siPytest,
   siPython,
+  siReact,
   siStreamlit,
   siSymfony,
   siUbuntu,
+  siVite,
 } from "simple-icons";
 
 const tech = {
@@ -46,6 +50,10 @@ const tech = {
   Access: { url: "https://www.microsoft.com/microsoft-365/access" },
   "Microsoft Office": { url: "https://www.microsoft.com/microsoft-365" },
   Ubuntu: { url: "https://ubuntu.com", icon: siUbuntu },
+  React: { url: "https://react.dev", icon: siReact },
+  Vite: { url: "https://vite.dev", icon: siVite },
+  "GitHub Pages": { url: "https://pages.github.com", icon: siGithubpages },
+  "Claude Code": { url: "https://claude.com/claude-code", icon: siClaude },
 };
 
 // Variantes d'écriture qui pointent vers la même techno.
