@@ -59,6 +59,36 @@ export const projects = [
     github: "https://github.com/Nixy00/AutoDash",
   },
   {
+    id: "portfolio",
+    category: "perso",
+    title: { fr: "Ce portfolio", en: "This portfolio" },
+    kind: { fr: "Projet personnel · piloté avec des agents IA", en: "Personal project · built with AI agents" },
+    year: "2026",
+    summary: {
+      fr: "Le site que vous visitez : un portfolio bilingue en React, dont j'ai défini l'architecture, le contenu et le design, et dont le code a été écrit par des agents IA que j'ai pilotés.",
+      en: "The site you are on: a bilingual React portfolio. I defined its architecture, content and design, and directed the AI agents that wrote the code.",
+    },
+    highlights: [
+      {
+        fr: "Application React (Vite) en français et en anglais, thème clair et sombre",
+        en: "React (Vite) app in French and English, with light and dark themes",
+      },
+      {
+        fr: "Fond animé en canvas, filtres de projets, liens et logos des technologies",
+        en: "Animated canvas background, project filters, technology links and logos",
+      },
+      {
+        fr: "Déploiement automatique avec GitHub Actions sur GitHub Pages, nom de domaine personnalisé",
+        en: "Automatic deployment with GitHub Actions to GitHub Pages, custom domain",
+      },
+    ],
+    tags: ["React", "Vite", "JavaScript", "CSS", "GitHub Actions", "GitHub Pages", "Claude Code"],
+    image: "projects/portfolio.png",
+    gallery: [],
+    github: "https://github.com/Nixy00/portefolio",
+    site: "https://matteogodart.tech",
+  },
+  {
     id: "buddy-system",
     category: "cours",
     title: "Buddy System",
@@ -172,7 +202,7 @@ export const butSkills = [
       fr: "Concevoir, coder et tester des applications qui répondent à un besoin.",
       en: "Design, code and test applications that meet a need.",
     },
-    projects: ["autodash", "buddy-system", "steam"],
+    projects: ["autodash", "portfolio", "buddy-system", "steam"],
   },
   {
     id: "optimiser",
@@ -193,7 +223,7 @@ export const butSkills = [
       fr: "Installer, déployer et sécuriser des services (serveurs, conteneurs, machines virtuelles).",
       en: "Install, deploy and secure services (servers, containers, virtual machines).",
     },
-    projects: ["autodash", "buddy-system"],
+    projects: ["autodash", "buddy-system", "portfolio"],
   },
   {
     id: "donnees",
@@ -212,7 +242,7 @@ export const butSkills = [
       fr: "Analyser un besoin, planifier, suivre l'avancement et livrer.",
       en: "Analyse a need, plan, track progress and deliver.",
     },
-    projects: ["buddy-system", "stage"],
+    projects: ["buddy-system", "stage", "portfolio"],
   },
   {
     id: "equipe",
@@ -279,14 +309,15 @@ export const ui = {
   heroCta: { fr: "Voir mes projets", en: "See my projects" },
   projectsTitle: { fr: "Projets", en: "Projects" },
   projectsIntro: {
-    fr: "Un projet personnel, des projets réalisés en BUT et un stage en entreprise.",
-    en: "A personal project, projects built during my degree and an internship.",
+    fr: "Des projets personnels, des projets réalisés en BUT et un stage en entreprise.",
+    en: "Personal projects, projects built during my degree and an internship.",
   },
   noRepo: {
     cours: { fr: "Projet de cours, pas de dépôt public", en: "Coursework, no public repository" },
     stage: { fr: "Travail en entreprise, code non public", en: "Company work, code not public" },
   },
   viewCode: { fr: "Voir le code", en: "View code" },
+  viewSite: { fr: "Voir le site", en: "Visit site" },
   skillsTitle: { fr: "Compétences", en: "Skills" },
   skillsIntro: {
     fr: "Les six compétences du BUT Informatique, et les projets où je les ai mises en pratique.",

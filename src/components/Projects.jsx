@@ -80,6 +80,11 @@ function ProjectCard({ project, onZoom, highlighted }) {
         )}
 
         <div className="project-links">
+          {project.site && (
+            <a href={project.site} target="_blank" rel="noopener noreferrer" className="link-arrow">
+              {t(ui.viewSite)} <ArrowIcon />
+            </a>
+          )}
           {project.github ? (
             <a href={project.github} target="_blank" rel="noopener noreferrer" className="link-arrow">
               <GitHubIcon /> {t(ui.viewCode)} <ArrowIcon />
