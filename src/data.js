@@ -301,6 +301,10 @@ export const ui = {
   themeLight: { fr: "Passer en thème clair", en: "Switch to light theme" },
   langLabel: { fr: "Switch to English", en: "Passer en français" },
   footer: { fr: "Portfolio de Matteo Godart", en: "Matteo Godart's portfolio" },
+  credits: {
+    fr: "Conçu et piloté par Matteo Godart (architecture, choix techniques, contenu, design) · Codé par des agents IA avec",
+    en: "Designed and directed by Matteo Godart (architecture, technical choices, content, design) · Coded by AI agents with",
+  },
   backToTop: { fr: "Haut de page", en: "Back to top" },
   menuOpen: { fr: "Ouvrir le menu", en: "Open menu" },
   menuClose: { fr: "Fermer le menu", en: "Close menu" },
